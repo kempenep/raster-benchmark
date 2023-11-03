@@ -42,6 +42,7 @@ for i in range(10):
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
+    print(pd.DataFrame.from_dict(extracted.dict()))
     extracted.io.close()
 
 
