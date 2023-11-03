@@ -20,7 +20,7 @@ for i in range(10):
     tic = timeit.default_timer()
 
     jim = pj.Jim()
-    for i, path in enumerate(rasters):
+    for ipath, path in enumerate(rasters):
         jim.geometry.stackBand(pj.Jim(path))
     jim.properties.setDimension(band_names, 'band')
 
