@@ -30,7 +30,7 @@ t_list = [None] * 10
 for i in range(10):
     tic = timeit.default_timer()
 
-    pj.geometry.warp(t_srs = 'epsg:32633', dx = 90, dy = 90, resample = 'average')
+    pj.geometry.warp(jim, t_srs = 'epsg:32633', dx = 90, dy = 90, resample = 'average')
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
