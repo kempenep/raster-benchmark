@@ -29,7 +29,7 @@ t_list = [None] * 10
 for i in range(10):
     tic = timeit.default_timer()
 
-    pj.geometry.crop(bbox = bbox)
+    pj.geometry.crop(jim, bbox = bbox)
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
