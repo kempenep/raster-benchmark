@@ -34,9 +34,9 @@ t_list = [None] * 10
 for i in range(10):
     tic = timeit.default_timer()
 
-    extracted = v.geometry.extract(jim, output = '/vsimem/extracted.json',
-                                   rule = ['allpoints'], oformat = 'GeoJSON',
-                                   co = ['OVERWRITE=YES'])
+    extracted = pj.geometry.extract(v, jim, output = '/vsimem/extracted.json',
+                                    rule = ['allpoints'], oformat = 'GeoJSON',
+                                    co = ['OVERWRITE=YES'])
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
