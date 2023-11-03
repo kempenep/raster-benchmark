@@ -37,8 +37,7 @@ for i in range(10):
     output = '/vsimem/extracted' + str(i) + '.json'
     extracted = pj.geometry.extract(v, jim, output = output,
                                     rule = ['allpoints'],
-                                    oformat = 'GeoJSON',
-                                    co = ['OVERWRITE=YES'])
+                                    oformat = 'GeoJSON')
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
