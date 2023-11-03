@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import timeit
+import pandas as pd
 import pyjeo as pj
 
 wd = os.getcwd()
