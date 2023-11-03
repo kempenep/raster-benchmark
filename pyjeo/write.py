@@ -25,7 +25,7 @@ stack_file = 'stack.TIF'
 for i in range(10):
     tic = timeit.default_timer()
 
-    jim.io.write(stac_file, co = ['COMPRESS=LZW'])
+    jim.io.write(stack_file, co = ['COMPRESS=LZW'])
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
