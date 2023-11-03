@@ -34,12 +34,15 @@ t_list = [None] * 10
 for i in range(10):
     tic = timeit.default_timer()
 
-    extracted = pj.geometry.extract(v, jim, output = '/vsimem/extracted.json',
-                                    rule = ['allpoints'], oformat = 'GeoJSON',
+    output = '/vsimem/extracted' + str(i) + '.json'
+    extracted = pj.geometry.extract(v, jim, output = output,
+                                    rule = ['allpoints'],
+                                    oformat = 'GeoJSON',
                                     co = ['OVERWRITE=YES'])
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
+    extracted.io.close()
 
 
 df = {'task': ['extract-points'] * 10, 'package': ['pyjeo'] * 10,
