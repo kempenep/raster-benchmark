@@ -22,14 +22,17 @@ jim.properties.setDimension(band_names, 'band')
 
 # minx, miny, maxx, maxy
 area = [598500, 5682100, 727500, 5781000]
-# ulx, uly, lrx, lry
+#bbox in pyjeo is [ulx, uly, lrx, lry]
 bbox = [598500, 5781000, 727500, 5682100]
 
 t_list = [None] * 10
 for i in range(10):
     tic = timeit.default_timer()
 
-    pj.geometry.crop(jim, bbox = bbox)
+    #get image coordinates
+    uli, ulj = jim.geometry.geo2image(bbox[0], bbox[1])
+    lri, lrj = jim.geometry.geo2image(bbox[2], bbox[3])
+    jim[ulj : lrj + 1, uli : lri + 1]
 
     toc = timeit.default_timer()
     t_list[i] = round(toc - tic, 2)
